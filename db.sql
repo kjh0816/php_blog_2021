@@ -1,7 +1,9 @@
 # DB 생성
-DROP DATABASE IF EXISTS php_blog_2021;
-CREATE DATABASE php_blog_2021;
-USE php_blog_2021;
+DROP DATABASE st__2021_04_full__site03;
+
+CREATE DATABASE st__2021_04_full__site03;
+
+USE st__2021_04_full__site03;
 
 # 게시물 테이블 생성
 CREATE TABLE article (
@@ -54,12 +56,12 @@ CREATE TABLE `member` (
 INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
-loginId = 'user1',
-loginPw = 'user1',
-`name` = '홍길동',
-nickname = '강바람',
-email = 'user1@test.com',
-cellphoneNo = '01011111111';
+loginId = 'jihoo',
+loginPw = 'jihoo',
+`name` = 'jh',
+nickname = 'jh',
+email = 'readshot2@gmail.com',
+cellphoneNo = '01049219810';
 
 INSERT INTO `member`
 SET regDate = NOW(),
@@ -84,6 +86,17 @@ ALTER TABLE `member` ADD COLUMN delStatus TINYINT(1) UNSIGNED NOT NULL DEFAULT 0
 ALTER TABLE `member` ADD COLUMN delDate DATETIME AFTER delStatus;
 
 TRUNCATE article;
+
+SELECT * FROM article;
+SELECT * FROM `member`;
+
+
+INSERT INTO article 
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 1,
+title = 'jhjh',
+`body` = 'bb따봉'
 
 INSERT INTO article 
 SET regDate = NOW(),
